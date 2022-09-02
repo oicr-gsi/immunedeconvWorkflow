@@ -26,9 +26,9 @@ workflow immunedeconv {
   }
 
   meta {
-    author: "Iain Bancarz and Rishi Shah, with modifications by Peter Ruzanov, Lawrence Heisler"
-    email: "ibancarz@oicr.on.ca, pruzanov@oicr.on.ca, lheisler@oicr.on.ca"
-    description: "QC metrics for RNASeq data"
+    author: "Iain Bancarz"
+    email: "ibancarz@oicr.on.ca"
+    description: "Run immunedeconv functions"
     dependencies: [
       {
 	name: "immunedeconv-tools/1.0.0",
