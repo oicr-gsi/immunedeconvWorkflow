@@ -4,25 +4,28 @@ workflow immunedeconv {
 
   input {
     File resultsFile
+    String sampleName
   }
   
   parameter_meta {
     resultsFile: "A .genes.results file output from the RSEM workflow"
+    sampleName: "Sample or library identifier as prefix for output filenames"
   }
 
-  call prepare_inputs {
+  call prepareInputs {
     input:
     resultsFile = resultsFile
   }
 
-  call run_immunedeconv {
+  call runImmunedeconv {
     input:
-    tpmFile = prepare_inputs.tpmFile
+    tpmFile = prepareInputs.tpmFile,
+    sampleName = sampleName
   }
 
   output {
-    File cibersort = run_immunedeconv.cibersortResults
-    File percentiles = run_immunedeconv.percentileResults
+    File cibersort = runImmunedeconv.cibersortResults
+    File percentiles = runImmunedeconv.percentileResults
   }
 
   meta {
@@ -42,7 +45,7 @@ workflow immunedeconv {
   }  
 }
 
-task prepare_inputs {
+task prepareInputs {
 
   input {
     File resultsFile
@@ -78,10 +81,11 @@ task prepare_inputs {
   }
 }
 
-task run_immunedeconv {
+task runImmunedeconv {
 
   input {
     File tpmFile
+    String sampleName
     String modules = "immunedeconv-tools/1.0.0"
     Int jobMemory = 16
     Int threads = 4
@@ -90,6 +94,7 @@ task run_immunedeconv {
 
   parameter_meta {
     tpmFile: "Space-delimited TPM file from the prepare_inputs task"
+    sampleName: "Sample or library identifier; prefix for output filenames"
     modules: "required environment modules"
     jobMemory: "Memory allocated for this job"
     threads: "Requested CPU threads"
@@ -97,16 +102,19 @@ task run_immunedeconv {
   }
 
   command <<<
+    set -euo pipefail
     Rscript --vanilla ${IMMUNEDECONV_TOOLS_SCRIPTS}/immunedeconv_cibersort.R \
     ~{tpmFile} \
     ${IMMUNEDECONV_TOOLS_SCRIPTS}/CIBERSORT.R \
     ${IMMUNEDECONV_TOOLS_DATA}/LM22.txt \
     ${IMMUNEDECONV_TOOLS_DATA}/MATRIX.txt
+    mv CIBERSORT-Results.txt ~{sampleName}.immunedeconv_CIBERSORT-Results.tsv
+    mv immunedeconv_out.csv ~{sampleName}.immunedeconv_CIBERSORT-Percentiles.csv
   >>>
 
   output {
-    File cibersortResults = "CIBERSORT-Results.txt"
-    File percentileResults = "immunedeconv_out.csv"
+    File cibersortResults = "~{sampleName}.immunedeconv_CIBERSORT-Results.tsv"
+    File percentileResults = "~{sampleName}.immunedeconv_CIBERSORT-Percentiles.csv"
   }
 
   meta {
