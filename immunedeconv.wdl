@@ -17,15 +17,15 @@ workflow immunedeconv {
     resultsFile = resultsFile
   }
 
-  call runImmunedeconv {
+  call runCibersort {
     input:
     tpmFile = prepareInputs.tpmFile,
     sampleName = sampleName
   }
 
   output {
-    File cibersort = runImmunedeconv.cibersortResults
-    File percentiles = runImmunedeconv.percentileResults
+    File cibersort = runCibersort.cibersortResults
+    File percentiles = runCibersort.percentileResults
   }
 
   meta {
@@ -81,7 +81,7 @@ task prepareInputs {
   }
 }
 
-task runImmunedeconv {
+task runCibersort {
 
   input {
     File tpmFile
