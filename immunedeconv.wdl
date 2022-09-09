@@ -70,6 +70,12 @@ task prepareInputs {
     -n ${IMMUNEDECONV_TOOLS_DATA}/ensembl_conversion_hg38.txt
   >>>
 
+  runtime {
+    memory: "~{jobMemory} GB"
+    modules: "~{modules}"
+    timeout: "~{timeout}"
+  }
+
   output {
     File tpmFile = "tpm.txt"
   }
@@ -111,6 +117,12 @@ task runCibersort {
     mv CIBERSORT-Results.txt ~{sampleName}.immunedeconv_CIBERSORT-Results.tsv
     mv immunedeconv_out.csv ~{sampleName}.immunedeconv_CIBERSORT-Percentiles.csv
   >>>
+
+  runtime {
+    memory: "~{jobMemory} GB"
+    modules: "~{modules}"
+    timeout: "~{timeout}"
+  }
 
   output {
     File cibersortResults = "~{sampleName}.immunedeconv_CIBERSORT-Results.tsv"
