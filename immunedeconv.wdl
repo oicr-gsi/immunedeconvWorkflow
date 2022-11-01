@@ -24,7 +24,7 @@ workflow immunedeconv {
   }
 
   output {
-    File cibersort = runCibersort.cibersortResults
+    File? cibersort = runCibersort.cibersortResults
     File percentiles = runCibersort.percentileResults
   }
 
@@ -34,7 +34,7 @@ workflow immunedeconv {
     description: "Run immunedeconv functions"
     dependencies: [
       {
-	name: "immunedeconv-tools/1.0.0",
+	name: "immunedeconv-tools/1.1.0",
 	url: "https://bitbucket.oicr.on.ca/projects/GSI/repos/immunedeconvtools/"
       },
       {
@@ -49,7 +49,7 @@ task prepareInputs {
 
   input {
     File resultsFile
-    String modules = "immunedeconv-tools/1.0.0"
+    String modules = "immunedeconv-tools/1.1.0"
     Int jobMemory = 4
     Int threads = 1
     Int timeout = 1
@@ -92,7 +92,7 @@ task runCibersort {
   input {
     File tpmFile
     String sampleName
-    String modules = "immunedeconv-tools/1.0.0"
+    String modules = "immunedeconv-tools/1.1.0"
     Int jobMemory = 16
     Int threads = 4
     Int timeout = 4
@@ -114,7 +114,11 @@ task runCibersort {
     ${IMMUNEDECONV_TOOLS_SCRIPTS}/CIBERSORT.R \
     ${IMMUNEDECONV_TOOLS_DATA}/LM22.txt \
     ${IMMUNEDECONV_TOOLS_DATA}/MATRIX.txt
-    mv CIBERSORT-Results.txt ~{sampleName}.immunedeconv_CIBERSORT-Results.tsv
+    if [ -f CIBERSORT-Results.txt ]
+      then
+      mv CIBERSORT-Results.txt ~{sampleName}.immunedeconv_CIBERSORT-Results.tsv
+      fi
+
     mv immunedeconv_out.csv ~{sampleName}.immunedeconv_CIBERSORT-Percentiles.csv
   >>>
 
@@ -125,7 +129,7 @@ task runCibersort {
   }
 
   output {
-    File cibersortResults = "~{sampleName}.immunedeconv_CIBERSORT-Results.tsv"
+    File? cibersortResults = "~{sampleName}.immunedeconv_CIBERSORT-Results.tsv"
     File percentileResults = "~{sampleName}.immunedeconv_CIBERSORT-Percentiles.csv"
   }
 
