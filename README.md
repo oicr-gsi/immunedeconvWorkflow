@@ -53,39 +53,39 @@ Output | Type | Description
 
 
 ## Commands
- This section lists command(s) run by immunedeconv workflow
+This section lists command(s) run by immunedeconv workflow
  
- * Running immunedeconv workflow
+* Running immunedeconv workflow
  
- Immunedeconv workflow analyzes the expression data (RSEM-generated tags per million) and runs
- CIBERSORT, outputting the predicted persentiles for cellular sub-populations.
+Immunedeconv workflow analyzes the expression data (RSEM-generated tags per million) and runs
+CIBERSORT, outputting the predicted persentiles for cellular sub-populations.
  
- ### Convert the inputs (RSEM results file) into a TPM table
+### Convert the inputs (RSEM results file) into a TPM table
  
- '''
-     Rscript convert_rsem_results.R 
-     -i RESULT_FILE
-     -o tpm.txt
-     -n ensembl_conversion_hg38.txt
- '''
+```
+  Rscript convert_rsem_results.R 
+  -i RESULT_FILE
+  -o tpm.txt
+  -n ensembl_conversion_hg38.txt
+```
  
- ### Running CIBERSORT script
+### Running CIBERSORT script
  
- '''
-     set -euo pipefail
-     Rscript --vanilla immunedeconv_cibersort.R 
-     TPM_FILE
-     CIBERSORT.R
-     LM22.txt
-     MATRIX.txt
-     if [ -f CIBERSORT-Results.txt ]
-       then
-       mv CIBERSORT-Results.txt ~{sampleName}.immunedeconv_CIBERSORT-Results.tsv
-       fi
+```
+  set -euo pipefail
+  Rscript --vanilla immunedeconv_cibersort.R 
+  TPM_FILE
+  CIBERSORT.R
+  LM22.txt
+  MATRIX.txt
+  if [ -f CIBERSORT-Results.txt ]
+    then
+    mv CIBERSORT-Results.txt ~{sampleName}.immunedeconv_CIBERSORT-Results.tsv
+    fi
  
-     mv immunedeconv_out.csv ~{sampleName}.immunedeconv_CIBERSORT-Percentiles.csv
- '''
- ## Support
+  mv immunedeconv_out.csv ~{sampleName}.immunedeconv_CIBERSORT-Percentiles.csv
+```
+## Support
 
 For support, please file an issue on the [Github project](https://github.com/oicr-gsi/immunedeconvWorkflow) or send an email to gsi@oicr.on.ca .
 
