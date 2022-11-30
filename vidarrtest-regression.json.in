@@ -2,7 +2,7 @@
     {
 	"arguments": {
 	    "immunedeconv.prepareInputs.jobMemory": null,
-	    "immunedeconv.prepareInputs.modules": "immunedeconv-tools/1.0.0",
+	    "immunedeconv.prepareInputs.modules": "immunedeconv-tools/1.1.0",
 	    "immunedeconv.prepareInputs.threads": null, 
 	    "immunedeconv.prepareInputs.timeout": null,
 	    "immunedeconv.resultsFile": {
@@ -18,7 +18,7 @@
 		"type": "EXTERNAL"
 	    },
 	    "immunedeconv.runCibersort.jobMemory": null,
-	    "immunedeconv.runCibersort.modules": "immunedeconv-tools/1.0.0",
+	    "immunedeconv.runCibersort.modules": "immunedeconv-tools/1.1.0",
 	    "immunedeconv.runCibersort.threads": null,
 	    "immunedeconv.runCibersort.timeout": null,
 	    "immunedeconv.sampleName": "GSICAPBENCH_1232"
@@ -59,7 +59,7 @@
     {
 	"arguments": {
 	    "immunedeconv.prepareInputs.jobMemory": null,
-	    "immunedeconv.prepareInputs.modules": "immunedeconv-tools/1.0.0",
+	    "immunedeconv.prepareInputs.modules": "immunedeconv-tools/1.1.0",
 	    "immunedeconv.prepareInputs.threads": null, 
 	    "immunedeconv.prepareInputs.timeout": null,
 	    "immunedeconv.resultsFile": {
@@ -75,7 +75,7 @@
 		"type": "EXTERNAL"
 	    },
 	    "immunedeconv.runCibersort.jobMemory": null,
-	    "immunedeconv.runCibersort.modules": "immunedeconv-tools/1.0.0",
+	    "immunedeconv.runCibersort.modules": "immunedeconv-tools/1.1.0",
 	    "immunedeconv.runCibersort.threads": null,
 	    "immunedeconv.runCibersort.timeout": null,
 	    "immunedeconv.sampleName": "GSICAPBENCH_1275"
