@@ -82,8 +82,11 @@ task prepareInputs {
 
   meta {
     output_meta: {
-      tpmFile: "Space-delimited file containing Hugo gene symbols and TPM values"
+    tpmFile: {
+        description: "Space-delimited file containing Hugo gene symbols and TPM values",
+        vidarr_label: "tpmFile"
     }
+}
   }
 }
 

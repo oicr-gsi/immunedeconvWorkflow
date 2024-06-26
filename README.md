@@ -46,10 +46,10 @@ Parameter|Value|Default|Description
 
 ### Outputs
 
-Output | Type | Description
----|---|---
-`cibersort`|File?|Output from the CIBERSORT.R script
-`percentiles`|File|Output from immunedeconv with percentiles relative to the control set
+Output | Type | Description | Labels
+---|---|---|---
+`cibersort`|File?|Output from the CIBERSORT.R script|
+`percentiles`|File|Output from immunedeconv with percentiles relative to the control set|
 
 
 ## Commands
