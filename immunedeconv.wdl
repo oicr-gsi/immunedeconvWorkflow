@@ -31,7 +31,7 @@ workflow immunedeconv {
   meta {
     author: "Iain Bancarz"
     email: "ibancarz@oicr.on.ca"
-    description: "Run immunedeconv functions"
+    description: "This workflow uses immunedeconv package to run CIBERSORT analysis on RSEM results. Immunedeconv package wraps multiple algorithms in an extensive toolkit. Currently, immunedeconvWorkflow offers deconvolution of immune cell population transcriptomic signatures but may be expanded to other types of analyses in a future."
     dependencies: [
       {
 	name: "immunedeconv-tools/1.1.0",
