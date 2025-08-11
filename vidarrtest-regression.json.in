@@ -7,7 +7,7 @@
 	    "immunedeconv.prepareInputs.timeout": null,
 	    "immunedeconv.resultsFile": {
 		"contents": {
-                    "configuration": "/.mounts/labs/gsi/testdata/immunedeconv/inputs/GSICAPBENCH_1232_Lv_M_WT_100-009-006_LCM3.genes.results",
+                    "configuration": "/.mounts/labs/gsi/testdata/immunedeconv/test_inputs/Test01.genes.results",
                     "externalIds": [
 			{
                             "id": "TEST",
@@ -21,19 +21,19 @@
 	    "immunedeconv.runCibersort.modules": "immunedeconv-tools/1.1.0",
 	    "immunedeconv.runCibersort.threads": null,
 	    "immunedeconv.runCibersort.timeout": null,
-	    "immunedeconv.sampleName": "GSICAPBENCH_1232"
+	    "immunedeconv.sampleName": "Test01"
 	},
-	"description": "immunedeconv workflow test on GSICAPBENCH_1232",
+	"description": "immunedeconv workflow test on GSICAPBENCH",
 	"engineArguments": {
 	    "write_to_cache": false,
 	    "read_from_cache": false
 	},
-	"id": "GSICAPBENCH_1232",
+	"id": "GSICAPBENCH",
 	"metadata": {
 	    "immunedeconv.cibersort": {
 		"contents": [
 		    {
-			"outputDirectory": "@SCRATCH@/@DATE@_Workflow_immunedeconv_GSICAPBENCH_1232_@JENKINSID@"
+			"outputDirectory": "@SCRATCH@/@DATE@_Workflow_immunedeconv_GSICAPBENCH_@JENKINSID@"
 		    }
 		],
 		"type": "ALL"
@@ -41,7 +41,7 @@
 	    "immunedeconv.percentiles": {
 		"contents": [
 		    {
-			"outputDirectory": "@SCRATCH@/@DATE@_Workflow_immunedeconv_GSICAPBENCH_1232_@JENKINSID@"
+			"outputDirectory": "@SCRATCH@/@DATE@_Workflow_immunedeconv_GSICAPBENCH_@JENKINSID@"
 		    }
 		],
 		"type": "ALL"
@@ -51,7 +51,7 @@
 	    {
 		"metrics_calculate": "@CHECKOUT@/test/calculate.sh",
 		"metrics_compare": "@CHECKOUT@/test/compare.sh",
-		"output_metrics": "/.mounts/labs/gsi/testdata/immunedeconv/output_metrics/GSICAPBENCH_1232_Lv_M_WT_100-009-006_LCM3.metrics",
+		"output_metrics": "/.mounts/labs/gsi/testdata/immunedeconv/output_metrics/workflow_test_01.metrics",
 		"type": "script"
 	    }
 	]
@@ -64,7 +64,7 @@
 	    "immunedeconv.prepareInputs.timeout": null,
 	    "immunedeconv.resultsFile": {
 		"contents": {
-                    "configuration": "/.mounts/labs/gsi/testdata/immunedeconv/inputs/GSICAPBENCH_1275_Lv_M_WT_100-PM-019_LCM3.genes.results",
+                    "configuration": "/.mounts/labs/gsi/testdata/immunedeconv/test_inputs/Test02.genes.results",
                     "externalIds": [
 			{
                             "id": "TEST",
@@ -78,19 +78,19 @@
 	    "immunedeconv.runCibersort.modules": "immunedeconv-tools/1.1.0",
 	    "immunedeconv.runCibersort.threads": null,
 	    "immunedeconv.runCibersort.timeout": null,
-	    "immunedeconv.sampleName": "GSICAPBENCH_1275"
+	    "immunedeconv.sampleName": "Test02"
 	},
-	"description": "immunedeconv workflow test on GSICAPBENCH_1275",
+	"description": "immunedeconv workflow test on GSICAPBENCH",
 	"engineArguments": {
 	    "write_to_cache": false,
 	    "read_from_cache": false
 	},
-	"id": "GSICAPBENCH_1275",
+	"id": "GSICAPBENCH",
 	"metadata": {
 	    "immunedeconv.cibersort": {
 		"contents": [
 		    {
-			"outputDirectory": "@SCRATCH@/@DATE@_Workflow_immunedeconv_GSICAPBENCH_1275_@JENKINSID@"
+			"outputDirectory": "@SCRATCH@/@DATE@_Workflow_immunedeconv_GSICAPBENCH_@JENKINSID@"
 		    }
 		],
 		"type": "ALL"
@@ -98,7 +98,7 @@
 	    "immunedeconv.percentiles": {
 		"contents": [
 		    {
-			"outputDirectory": "@SCRATCH@/@DATE@_Workflow_immunedeconv_GSICAPBENCH_1275_@JENKINSID@"
+			"outputDirectory": "@SCRATCH@/@DATE@_Workflow_immunedeconv_GSICAPBENCH_@JENKINSID@"
 		    }
 		],
 		"type": "ALL"
@@ -108,7 +108,7 @@
 	    {
 		"metrics_calculate": "@CHECKOUT@/test/calculate.sh",
 		"metrics_compare": "@CHECKOUT@/test/compare.sh",
-		"output_metrics": "/.mounts/labs/gsi/testdata/immunedeconv/output_metrics/GSICAPBENCH_1275_Lv_M_WT_100-PM-019_LCM3.metrics",
+		"output_metrics": "/.mounts/labs/gsi/testdata/immunedeconv/output_metrics/workflow_test_02.metrics",
 		"type": "script"
 	    }
 	]
