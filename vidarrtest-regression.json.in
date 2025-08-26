@@ -23,17 +23,17 @@
 	    "immunedeconv.runCibersort.timeout": null,
 	    "immunedeconv.sampleName": "Test01"
 	},
-	"description": "immunedeconv workflow test on GSICAPBENCH",
+	"description": "immunedeconv workflow test on GSICAPBENCH_1",
 	"engineArguments": {
 	    "write_to_cache": false,
 	    "read_from_cache": false
 	},
-	"id": "GSICAPBENCH",
+	"id": "GSICAPBENCH_1",
 	"metadata": {
 	    "immunedeconv.cibersort": {
 		"contents": [
 		    {
-			"outputDirectory": "@SCRATCH@/@DATE@_Workflow_immunedeconv_GSICAPBENCH_@JENKINSID@"
+			"outputDirectory": "@SCRATCH@/@DATE@_Workflow_immunedeconv_GSICAPBENCH_1_@JENKINSID@"
 		    }
 		],
 		"type": "ALL"
@@ -41,7 +41,7 @@
 	    "immunedeconv.percentiles": {
 		"contents": [
 		    {
-			"outputDirectory": "@SCRATCH@/@DATE@_Workflow_immunedeconv_GSICAPBENCH_@JENKINSID@"
+			"outputDirectory": "@SCRATCH@/@DATE@_Workflow_immunedeconv_GSICAPBENCH_1_@JENKINSID@"
 		    }
 		],
 		"type": "ALL"
@@ -80,17 +80,17 @@
 	    "immunedeconv.runCibersort.timeout": null,
 	    "immunedeconv.sampleName": "Test02"
 	},
-	"description": "immunedeconv workflow test on GSICAPBENCH",
+	"description": "immunedeconv workflow test on GSICAPBENCH_2",
 	"engineArguments": {
 	    "write_to_cache": false,
 	    "read_from_cache": false
 	},
-	"id": "GSICAPBENCH",
+	"id": "GSICAPBENCH_2",
 	"metadata": {
 	    "immunedeconv.cibersort": {
 		"contents": [
 		    {
-			"outputDirectory": "@SCRATCH@/@DATE@_Workflow_immunedeconv_GSICAPBENCH_@JENKINSID@"
+			"outputDirectory": "@SCRATCH@/@DATE@_Workflow_immunedeconv_GSICAPBENCH_2_@JENKINSID@"
 		    }
 		],
 		"type": "ALL"
@@ -98,7 +98,7 @@
 	    "immunedeconv.percentiles": {
 		"contents": [
 		    {
-			"outputDirectory": "@SCRATCH@/@DATE@_Workflow_immunedeconv_GSICAPBENCH_@JENKINSID@"
+			"outputDirectory": "@SCRATCH@/@DATE@_Workflow_immunedeconv_GSICAPBENCH_2_@JENKINSID@"
 		    }
 		],
 		"type": "ALL"
